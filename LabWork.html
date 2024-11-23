@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-bottom: 20px;
+        }
+        .slide {
+            display: none;
+        }
+        .active-slide {
+            display: block;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        .download-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #0073e6;
+            text-decoration: none;
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lab Work</h1>
+        
+        <!-- Embed PDF lab report -->
+        <iframe src="Sudan IV Test for Lipids.pdf"></iframe>
+        
+        <!-- Download link for the lab report -->
+        <a class="download-link" href="Sudan IV Test for Lipids.pdf" download>Download Lab Report (PDF)</a>
+
+        <!-- Slideshow -->
+        <div class="slide active-slide">
+            <h2>Slide 1</h2>
+            <p>Sudan IV Test for Lipids</p>
+            <img src="lab1.png" alt="Image 1">
+        </div>
+        <div class="slide">
+            <h2>Slide 2</h2>
+            <p>Iodine Test for Complex Carbohydrates</p>
+            <img src="lab2.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 3</h2>
+            <p>Benedict’s Test: Which food samples contain reducing sugars?</p>
+            <img src="lab3.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 4</h2>
+            <p>Gel Electrophoresis: Visualize and separate nucleic acids</p>
+            <img src="lab4.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 5</h2>
+            <p>Fluorescence Microscopy</p>
+            <img src="lab5.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 6</h2>
+            <p>Atomic Structure (Principles): Atoms and isotopes</p>
+            <img src="lab6.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 7</h2>
+            <p>Cell Membrane and Transport: Types of transporter proteins</p>
+            <img src="lab7.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 8</h2>
+            <p>Next Generation Sequencing</p>
+            <img src="lab8.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 9</h2>
+            <p>Cell Membrane and Transport: Modifying the cell membrane</p>
+            <img src="lab9.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 10</h2>
+            <p>Polymerase Chain Reaction</p>
+            <img src="lab10.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 11</h2>
+            <p>Experimental Design</p>
+            <img src="lab11.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 12</h2>
+            <p>Pipetting: Master the technique</p>
+            <img src="lab12.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 13</h2>
+            <p>Ionic and Covalent Bonds</p>
+            <img src="lab13.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 14</h2>
+            <p>Biuret’s Test for Proteins</p>
+            <img src="lab14.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 15</h2>
+            <p>Photosynthesis: Electron transport chain</p>
+            <img src="lab15.png" alt="Image 2">
+        </div>
+        <div class="slide">
+            <h2>Slide 16</h2>
+            <p>Light Microscopy</p>
+            <img src="lab16.jpg" alt="Image 2">
+        </div>
+        <div class="nav-buttons">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active-slide');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active-slide');
+        }
+
+        prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+    </script>
+</body>
+</html>
